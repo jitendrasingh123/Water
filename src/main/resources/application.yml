@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  contextPath: /water
+---
+spring:
+  profiles: default,local
+  jpa:
+    hibernate:
+      ddl-auto: none
+      
+  http:
+    multipart:
+        max-file-size: 800MB
+        max-request-size: 800MB
+  mvc: 
+    view:
+      prefix:  /WEB-INF/
+      suffix: .jsp 
+
+LOG_PATH: logs/
+
+UPLOAD_PATH_CASE_ATTACHMENTS: WATER/CASE_ATTACHMENTS
+UPLOAD_PATH_PROFILE_IMAGE: WATER/PROFILE_IMAGE
+
+datasource:
+
+    url: jdbc:mysql://localhost:3306/waterdb
+    username: root
+    password: cinfy#2512@
+    driverClassName: com.mysql.jdbc.Driver
+    defaultSchema: 
+    maxPoolSize: 5    
+    hibernate:
+      hbm2ddl.method: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
+
+   
+    
+    
